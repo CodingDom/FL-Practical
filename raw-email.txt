@@ -1,0 +1,155 @@
+Delivered-To: dominicsmith1021@gmail.com
+Received: by 2002:ab3:4a02:0:0:0:0:0 with SMTP id n2csp8080989lti;
+        Thu, 8 Aug 2019 00:39:32 -0700 (PDT)
+X-Received: by 2002:ab0:7149:: with SMTP id k9mr8519691uao.115.1565249972173;
+        Thu, 08 Aug 2019 00:39:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1565249972; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Lqvk6BXu25IE719O+WObY53pRbPQLVL0UVQH6a1e1A/1AbgsHzqH+i5rWAM6ZWPQ8Y
+         imnwEQHasOcHJjl1hXb4PQ/NXC4yOZlxIeU7Qq3AToThqMG+iO6//oFBlb6PV7BNcPeV
+         QK3E/yLb7w8dBXj9Ew6dF0dHGK5kBepSqJJzlo8LTfTTPf3PbFrhpFSN5b9XHVvysUIc
+         unPjjGLLD3H9qTS/rudIUTTZUwPfEXO5cwOjfNbmibny+XA52xscWfRHaI9f1iqhNaz8
+         8w4x9u4tEcTJXEMAKsVKZjKDMwEc+vgg7Jef1XXwM3J3Ssn6CEVjL0d6SKl6ewlsN3HC
+         dqvQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:mime-version:from:dkim-signature;
+        bh=9ZHzDarFxIKwsjqCUMvkmn3Pjl1Pn00+euPQayH38/c=;
+        b=T9w1oLeFvOvMamanE/vq7jX0dn1+CkXkXUK7sXgGIyDddu9P1f0EtMtTuobIigskuA
+         ec41Gdu5IQWe6rCDQi+OT9Escvn15SQIPszlHRALw3HqvE6RpUKe8+f9VpXPjS3z9btT
+         sKQEcL6ydlPMDLSIWLbumDbOnHkUL+6Yi/ITrUmd+Xt1Im5YiIRkkRbhibNQ4mNBGvGN
+         n5zNbZXJ0wm0MS2oDfHAoHONtHcvLsguFpGp5iPalT4vPwgwSVUB/KYgDlON5fD9rufR
+         bY7FHSft6R3h/R7wZEVt6Ht8Q0B4kFrNIyeGZkN9UE0el7Sn2zFFuN1JpjW4gPAOvRvJ
+         G1YQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@trilogyed.com header.s=google header.b=PSLiH3RI;
+       spf=pass (google.com: domain of tbrooks@trilogyed.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=tbrooks@trilogyed.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=trilogyed.com
+Return-Path: <tbrooks@trilogyed.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id o19sor1710508uap.54.2019.08.08.00.39.31
+        for <dominicsmith1021@gmail.com>
+        (Google Transport Security);
+        Thu, 08 Aug 2019 00:39:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of tbrooks@trilogyed.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@trilogyed.com header.s=google header.b=PSLiH3RI;
+       spf=pass (google.com: domain of tbrooks@trilogyed.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=tbrooks@trilogyed.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=trilogyed.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=trilogyed.com; s=google;
+        h=from:mime-version:date:message-id:subject:to;
+        bh=9ZHzDarFxIKwsjqCUMvkmn3Pjl1Pn00+euPQayH38/c=;
+        b=PSLiH3RI427WULd0M6y5NL6UQ5JcGa33dRmTTpqSydfPgIovGs4ytcANLOsTvVQbyK
+         3FvbZ0zzg0e4cvKfgUItF1SKSgopdYLLoD5aasWTQiSMdgTa5s7WgwkMKroXmGA3GWkh
+         cOzmN0Zk1/6vR9fGlqn9kWSa/RzHnvPRH4fyXiYtaa1JfLjYpM4kTwzlDyoHBES4Qb56
+         ZC76UyYPrBeJ85NfJWr3QzCy6aQbSzmZg3W33l/VFFvRt/j+/LR1I4Iv6eIsH9Lx5DHE
+         ZKTKIEXj+eePq3kk1mRrfwsaDslKOzE/HEfHSulyvQfV7yOc2G80iHftjnNRepnp7Zd8
+         5j+w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:from:mime-version:date:message-id:subject:to;
+        bh=9ZHzDarFxIKwsjqCUMvkmn3Pjl1Pn00+euPQayH38/c=;
+        b=gPd6LDsaUvsSr7z0RFjucx62JK/48FeLAnysk7rR9HBYBvdMic0UU+q3oCOKZ0C6yc
+         Y9hT01xuxpAKn1117bvM17UwWctdm+Z16Vl3DX0BZEu53uzflyPI7O9NZQBHSywS734K
+         z/5g6o0jW5mxnOz76xAmSboLHHv/QhircI3ENxfLlsWDU5hNYxlombNjHAhppzT7NBGk
+         Ei+liKlCBLJGfuo+haUSSCEGBZmHX7ZlhGHLXTcOGgxumOtelBFVNtYVcXhi72upu12e
+         sZmddnOb0JVKUmHmJIVh8aF+lbq24ajKK6t9YLd4b9vzc9svi5am00KfQq+hxby1RfCJ
+         bqFA==
+X-Gm-Message-State: APjAAAUb4lDIZo5JaTv02tAHT+QyCtIj2mtDFwh8hiw44ie2kMssv9PW jNcut0ouIIAa/GKArr7RlGL/fI83bMcS0u6EwrpViGI2yqM=
+X-Google-Smtp-Source: APXvYqwq3n/aG/8EeDNIkb1KZc2PRcL2p5RJk8hGBQZF+2htV71DrQ8EUNjRQZmc2aS17YAHxLHDtmZGo6vRGABItTk=
+X-Received: by 2002:ab0:4a6:: with SMTP id 35mr8630345uaw.123.1565249971059; Thu, 08 Aug 2019 00:39:31 -0700 (PDT)
+Received: from 193155701165 named unknown by gmailapi.google.com with HTTPREST; Thu, 8 Aug 2019 00:39:30 -0700
+From: Taylor Brooks <tbrooks@trilogyed.com>
+Mime-Version: 1.0
+X-OUTREACH-SENT: true
+Date: Thu, 8 Aug 2019 00:39:30 -0700
+Message-ID: <CAGGjPojnX_5L6F8sd0rKezQ0Gmf3QH7UruO=mv7d6QOezBQqFg@mail.gmail.com>
+Subject: UCF Alum Demo Day Invitation
+To: Dominic Smith <dominicsmith1021@gmail.com>
+Content-Type: multipart/related; boundary="00000000000082b821058f962872"
+
+--00000000000082b821058f962872
+Content-Type: multipart/alternative; boundary="00000000000082b81e058f962871"
+
+--00000000000082b81e058f962871
+Content-Type: text/plain; charset="UTF-8"
+
+Dominic,
+
+As an Alum of the UCF Boot Camps, I would like to invite you to attend the
+upcoming Demo Day for the most recent graduates of the program.  You have
+amazing insight to share with these graduates, and the fact that you have
+conquered the program adds to the value of your presence.  Your
+encouragement, feedback, and support could change the lives and even the
+journey for some of these students.  Simply sharing your time could be
+inspirational, as you know most of them are feeling some of the same
+emotions you did as graduation has recently occurred.
+
+Demo Day is a networking event and we encourage you to interact not only
+with the grads, but the industry professionals, and your alums as well.
+Build your network and look to expand your relationships with some of the
+leaders in the tech industry.  We hope you can attend August 29th and bring
+your positive outlook as a successful graduate of the Boot Camps. We look
+forward to seeing you at the event!
+
+Here is the link for location, timing and details and to register for
+yourself and a guest(s): EVENT LINK <https://ucfdd082919.splashthat.com/>
+
+If you have relocated out of the area or wish to no longer wish to receive
+these invitations, please just let us know. Thank you for your support!
+
+Taylor
+
+--00000000000082b81e058f962871
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div><span style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt;backg=
+round-color:transparent;font-family:&quot;Helvetica Neue&quot;;font-size:10=
+pt">Dominic,</span></div><div><br></div><div><span style=3D"font-family:&qu=
+ot;Helvetica Neue&quot;,&quot;Liberation Sans&quot;,Arial,&quot;sans serif&=
+quot;">As an Alum of the UCF Boot Camps, I would like to invite you to atte=
+nd the upcoming Demo Day for the most recent graduates of the program.=C2=
+=A0 You have amazing insight to share with these graduates, and the fact th=
+at you have conquered the program adds to the value of your presence.=C2=A0=
+ Your encouragement, feedback, and support could change the lives and even =
+the journey for some of these students.=C2=A0 Simply sharing your time coul=
+d be inspirational, as you know most of them are feeling some of the same e=
+motions you did as graduation has recently occurred.</span></div><div><br><=
+/div><div><span style=3D"font-family:&quot;Helvetica Neue&quot;,&quot;Liber=
+ation Sans&quot;,Arial,&quot;sans serif&quot;">Demo Day is a networking eve=
+nt and we encourage you to interact not only with the grads, but the indust=
+ry professionals, and your alums as well.=C2=A0 Build your network and look=
+ to expand your relationships with some of the leaders in the tech industry=
+.=C2=A0 We hope you can attend August 29th and bring your positive outlook =
+as a successful graduate of the Boot Camps. We look forward to seeing you a=
+t the event!</span></div><div><br></div><div><span style=3D"font-family:&qu=
+ot;Helvetica Neue&quot;,&quot;Liberation Sans&quot;,Arial,&quot;sans serif&=
+quot;">Here is the link for location, timing and details and to register fo=
+r yourself and a guest(s): </span><a href=3D"https://ucfdd082919.splashthat=
+.com/"><span style=3D"font-family:&quot;Helvetica Neue&quot;,&quot;Liberati=
+on Sans&quot;,Arial,&quot;sans serif&quot;">EVENT LINK</span></a></div><div=
+><br></div><div><span style=3D"font-family:&quot;Helvetica Neue&quot;,&quot=
+;Liberation Sans&quot;,Arial,&quot;sans serif&quot;">If you have relocated =
+out of the area or wish to no longer wish to receive these invitations, ple=
+ase just let us know. Thank you for your support!</span></div><div><br></di=
+v><div><span style=3D"font-family:&quot;Helvetica Neue&quot;,&quot;Liberati=
+on Sans&quot;,Arial,&quot;sans serif&quot;">Taylor</span></div><div><br></d=
+iv><div><img src=3D"cid:n2W6Fkr6YUsG7Q33o2r2OmtQvrbvxMI4_U7KlUMZ6o0"></div>=
+<div><br></div><div><br></div><div class=3D"outreach-signature"><br></div><=
+img src=3D"https://careerservices.trilogyed.com/api/mailings/opened/PMRGSZB=
+CHI2DAMZUGQ3CYITPOJTSEORCHE2WINTGGZQWMLJZGIZDKLJUMI4DMLJZME3GMLJWMMYDMZDEHE=
+4DQMZVMYRCYITWMVZHG2LPNYRDUIRUEIWCE43JM4RDUISGKRRHS2SEJZSHQOJVKQZDQU27IY3FK=
+NDOPBKDIXZNONLWYU3EPBXVSULCKF2GUNSOMVRT2IT5.gif" alt=3D"" width=3D"1" heigh=
+t=3D"1">
+
+--00000000000082b81e058f962871--
+--00000000000082b821058f962872
+Content-Type: image/png; name=n2W6Fkr6YUsG7Q33o2r2OmtQvrbvxMI4_U7KlUMZ6o0
+Content-Disposition: inline; filename=n2W6Fkr6YUsG7Q33o2r2OmtQvrbvxMI4_U7KlUMZ6o0
+Content-Transfer-Encoding: base64
+Content-ID: <n2W6Fkr6YUsG7Q33o2r2OmtQvrbvxMI4_U7KlUMZ6o0>
+X-Attachment-Id: 8a772ab8df2fc9e9_0.0.1
+
+
+--00000000000082b821058f962872--
