@@ -28,7 +28,7 @@ function extractMessage(dataArray) {
     // Removing the first element from the array since it's the content-type and is unnecessary 
     message.shift();
     // Converting the array into a string while adding in the linebreaks that may have been removed
-    message = message.join("\r\n");
+    message = message.join("\r\n ");
 
     return message;
 }
@@ -58,8 +58,6 @@ function extractData(data) {
     // Grab the body of the email
     importantInfo.Message = extractMessage(dataArray);
 
-    // Logging all of the information that was gathered
-    console.log(JSON.stringify(importantInfo, null, 2));
     return importantInfo;
 }
 
@@ -68,5 +66,8 @@ fs.readFile("./raw-email.txt","utf-8",function(err,data) {
     if (err) throw err;
 
     // Attempt to extract the relevant information
-    extractData(data);
+    const extractedData = extractData(data);
+
+    // Logging all of the information that was gathered
+    console.log(extractedData);
 });
